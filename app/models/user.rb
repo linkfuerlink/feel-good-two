@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   has_one :empowerment, dependent: :destroy
+
+  after_create :initialize_funeral
+
+  private
+
+  def initialize_funeral
+    Empowerment.create!(user: self)
+  end
 end
