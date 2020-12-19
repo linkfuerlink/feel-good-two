@@ -1,9 +1,9 @@
 class EmpowermentsController < ApplicationController
 
-  before_action :find_empowerment
+  # before_action :find_empowerment
 
   def dashboard
-    raise
+     @empowerment = current_user.empowerment
   end
 
   def new_activity
@@ -14,11 +14,11 @@ class EmpowermentsController < ApplicationController
     @empowerment = Empowerment.where(user: current_user)
   end
 
-  private
+  # private
 
-  def find_empowerment
-    @empowerment = current_user.empowerment
-    # authorize @empowerment
-  end
+  # def find_empowerment
+  #   @empowerment = current_user.empowerment
+  #   # authorize @empowerment
+  # end
 
 end

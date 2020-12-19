@@ -1,2 +1,7 @@
 Hello dashboard
-<%= link_to empowerment_new_activity_path(@empowerment)%>
+<br>
+
+<%= link_to 'Edit empowerment', edit_empowerment_path(@empowerment), class: 'btn btn-primary'%>
+
+<br>
+<%= link_to 'Add new activity', empowerment_new_activity_path(@empowerment), class: 'btn btn-primary'%>

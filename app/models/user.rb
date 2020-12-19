@@ -6,11 +6,11 @@ class User < ApplicationRecord
   validates :name, presence: true
   has_one :empowerment, dependent: :destroy
 
-  after_create :initialize_funeral
+  after_create :initialize_empowerment
 
   private
 
-  def initialize_funeral
+  def initialize_empowerment
     Empowerment.create!(user: self)
   end
 end
